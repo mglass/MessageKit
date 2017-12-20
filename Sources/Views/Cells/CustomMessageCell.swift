@@ -27,7 +27,7 @@ open class CustomMessageCell: MessageCollectionViewCell {
         super.configure(with: message, at: indexPath, and: messagesCollectionView)
         switch message.data {
         case .custom(let customObject):
-            if let view = delegate?.viewForCustomCell(with: customObject) {
+            if let view = delegate?.viewForCustomCell(with: message) {
                 self.customView.removeFromSuperview()
                 self.customView = view
                 setupSubviews()

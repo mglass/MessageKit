@@ -67,7 +67,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
     func didTapTopLabel(in cell: MessageCollectionViewCell)
     
-    func viewForCustomCell(with customData: Any) -> UIView
+    func viewForCustomCell(with message: MessageType) -> UIView
 
 }
 
