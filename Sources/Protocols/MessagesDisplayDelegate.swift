@@ -117,7 +117,8 @@ public protocol MessagesDisplayDelegate: AnyObject {
     ///   - message: A `MessageType` with a `MessageData` case of `.text` or `.attributedText`
     ///   to which the detectors will apply.
     ///   - indexPath: The `IndexPath` of the cell.
-    func detectorAttributes(for detector: DetectorType, and message: MessageType, at indexPath: IndexPath) -> [NSAttributedStringKey: Any]
+    ///FIXME: Disabled due to compatibility issues with Swift 3     -MG 19-Dec-2017
+//    func detectorAttributes(for detector: DetectorType, and message: MessageType, at indexPath: IndexPath) -> [NSAttributedStringKey: Any]
 
     // MARK: - Location Messages
 
