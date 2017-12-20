@@ -12,8 +12,6 @@ open class CustomMessageCell: MessageCollectionViewCell {
     
     open override class func reuseIdentifier() -> String { return "messagekit.cell.custommessage" }
     
-    var customLayoutDelegate: CustomMessageCellLayoutDelegate?
-    
     open var customView = UIView()
     
     open func setupConstraints() {
@@ -29,7 +27,7 @@ open class CustomMessageCell: MessageCollectionViewCell {
         super.configure(with: message, at: indexPath, and: messagesCollectionView)
         switch message.data {
         case .custom(let customObject):
-            if let view = customLayoutDelegate?.viewForCustomCell(with: customObject) {
+            if let view = delegate?.viewForCustomCell(with: customObject) {
                 self.customView.removeFromSuperview()
                 self.customView = view
                 setupSubviews()
@@ -41,5 +39,5 @@ open class CustomMessageCell: MessageCollectionViewCell {
 }
 
 protocol CustomMessageCellLayoutDelegate {
-    func viewForCustomCell(with customData: Any) -> UIView
+    
 }
